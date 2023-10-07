@@ -107,8 +107,9 @@ body {
         text-decoration: none;
         color: white;
         text-transform: capitalize;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         transition: all .3s ease;
+        letter-spacing: 1px;
     }
 
     .nav-links a:hover {
