@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Products | Comfy</title>
+</head>
+
+<body>
+    <!-- nav -->
+    <nav class="navbar">
+        <div class="nav-center">
+            <div class="nav-header">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="./index.html" class="nav-link black">home</a></li>
+                    <li><a href="./products.html" class="nav-link black">products</a></li>
+                    <li><a href="./about.html" class="nav-link black">about</a></li>
+                </ul>
+            </div>
+            <img src="./images/logo-black.svg" class="navbar-logo" alt="navbar logo">
+            <div class="cart-btn-container">
+                <button class="cart-btn ">
+                    <i class="fas fa-shopping-cart" style="color: #102a42;"></i>
+                </button>
+                <span class="cart-count">1</span>
+            </div>
+        </div>
+    </nav>
+    <!-- end of nav -->
+    <!-- sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <i class="fas fa-times sidebar-close-btn"></i>
+            <div class="sidebar-links">
+                <a href="./index.html"><i class="fas fa-home fa-fw"></i>home</a>
+                <a href="./products.html"><i class="fas fa-couch fa-fw"></i>products</a>
+                <a href="./about.html"><i class="fas fa-book fa-fw"></i>about</a>
+            </div>
+        </div>
+    </aside>
+    <!-- end of sidebar -->
+    <!-- cart -->
+    <aside class="cart-overlay">
+        <div class="cart">
+            <i class="fas fa-times cart-close-btn"></i>
+            <h3>your bag</h3>
+            <div class="cart-items">
+                <div class="cart-card">
+                    <img src="./images/main-bcg.jpeg" class="cart-item-img" alt="cart-img">
+                    <div class="cart-item-info">
+                        <h4 class="cart-item-name">high-back bench</h4>
+                        <p class="cart-item-price">$9.99</p>
+                        <button class="remove-cart-item-btn" data-id="1">remove</button>
+                    </div>
+                    <div class="cart-item-btns" data-id="1">
+                        <button class="cart-increase-btn"><i class="fas fa-chevron-up"></i></button>
+                        <span class="cart-item-count">1</span>
+                        <button class="cart-decrease-btn"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+                <div class="cart-card">
+                    <img src="./images/main-bcg.jpeg" class="cart-item-img" alt="cart-img">
+                    <div class="cart-item-info">
+                        <h4 class="cart-item-name">high-back bench</h4>
+                        <p class="cart-item-price">$9.99</p>
+                        <button class="remove-cart-item-btn" data-id="1">remove</button>
+                    </div>
+                    <div class="cart-item-btns" data-id="1">
+                        <button class="cart-increase-btn"><i class="fas fa-chevron-up"></i></button>
+                        <span class="cart-item-count">1</span>
+                        <button class="cart-decrease-btn"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <h2 class="cart-total">total : $9.99</h2>
+                <button class="cart-checkout-btn">checkout</button>
+            </div>
+        </div>
+    </aside>
+    <!-- end of cart -->
+    <!-- page banner -->
+    <section class="banner">
+        <h1 class="banner-content">home / products</h1>
+    </section>
+    <!-- end of page banner -->
+    <!-- products -->
+    <div class="products-section">
+        <!-- filters -->
+        <div class="filters-container">
+            <form class="input-form">
+                <input type="text" class="search-input" placeholder="search...">
+            </form>
+            <h4>company</h4>
+            <div class="companies">
+                <button class="company-btn">all</button>
+                <button class="company-btn">ikea</button>
+                <button class="company-btn">marcos</button>
+            </div>
+            <h4>price</h4>
+            <input type="range" class="range-input" value="40" min="0" max="80">
+            <p class="range-value">value : $40</p>
+        </div>
+        <!-- products -->
+        <div class="products-container">
+            <article class="featured-card">
+                <img src="./images/main-bcg.jpeg" class="featured-img" alt="featured img">
+                <h4>high back bench</h4>
+                <p>$9.99</p>
+                <div class="featured-card-btns">
+                    <a href="./product.html" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <i class="fas fa-shopping-cart add-cart-btn"></i>
+                </div>
+            </article>
+            <article class="featured-card">
+                <img src="./images/main-bcg.jpeg" class="featured-img" alt="featured img">
+                <h4>high back bench</h4>
+                <p>$9.99</p>
+                <div class="featured-card-btns">
+                    <a href="./product.html" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <i class="fas fa-shopping-cart add-cart-btn"></i>
+                </div>
+            </article>
+            <article class="featured-card">
+                <img src="./images/main-bcg.jpeg" class="featured-img" alt="featured img">
+                <h4>high back bench</h4>
+                <p>$9.99</p>
+                <div class="featured-card-btns">
+                    <a href="./product.html" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <i class="fas fa-shopping-cart add-cart-btn"></i>
+                </div>
+            </article>
+        </div>
+    </div>
+    <!-- end of products -->
+    <script type="module" src="./src/pages/products.js"></script>
+</body>
+
+</html>

@@ -118,6 +118,10 @@ body {
         color: #ba5d2c;
     }
 
+    .nav-links a.black {
+        color: #102a42;
+    }
+
 }
 
 /*
@@ -510,3 +514,9 @@ body {
         margin: 0 auto;
     }
 }
+
+/*
+=========================
+ products page
+=========================
+*/
