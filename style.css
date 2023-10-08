@@ -627,3 +627,29 @@ body {
     text-transform: capitalize;
     letter-spacing: 1px;
 }
+
+/*
+=========================
+ about page
+=========================
+*/
+
+.about-title {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.about-title:first-child {
+    color: #ba5d2c;
+}
+
+.about-text {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 700px;
+    color: #617d98;
+    line-height: 2rem;
+}
