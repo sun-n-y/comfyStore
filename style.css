@@ -588,12 +588,42 @@ body {
 .search-input {
     background-color: #f1f5f8;
     border: transparent;
-    padding: .5rem 1rem;
+    padding: .6rem 1rem;
     width: 90%;
     border-radius: .3rem;
 }
 
 .search-input::placeholder {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #617d98;
+}
+
+.filters-container h4 {
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #384550;
+}
+
+.companies {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: flex-start;
+}
+
+.company-btn {
+    margin-left: .5rem;
+    background-color: transparent;
+    border: transparent;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #617d98;
+}
+
+.range-value {
+    color: #617d98;
     text-transform: capitalize;
     letter-spacing: 1px;
 }
