@@ -228,7 +228,7 @@ body {
     background-color: white;
     top: 0;
     right: 0;
-    width: 400px;
+    width: 450px;
     height: 100vh;
     padding: 1.5rem;
 }
@@ -662,11 +662,12 @@ body {
 */
 
 .single-product {
-    width: 90vw;
     margin: 4rem auto 5rem auto;
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr;
+    max-width: 1170px;
+    padding: 0 2rem;
 }
 
 .single-product-info {
@@ -722,4 +723,18 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
+}
+
+@media screen and (min-width:970px) {
+    .single-product {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .single-product-text {
+        max-width: 100%;
+    }
+
+    .single-product img {
+        height: 550px;
+    }
 }
