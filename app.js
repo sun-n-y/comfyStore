@@ -1,2 +1,2 @@
 import './src/toggleSideBar.js';
-import { getElement } from './src/utils.js';
+import './src/toggleCart.js';
