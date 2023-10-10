@@ -1,4 +1,4 @@
-import { singleProductURL, formatPrice } from './utils.js';
+import { formatPrice } from './utils.js';
 
 const displayProducts = (products) => {
   const productsArray = products

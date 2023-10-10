@@ -16,6 +16,11 @@ export const storeProductsLocalStorage = function (name, products) {
   localStorage.setItem(name, JSON.stringify(products));
 };
 
+export const getProductsFromLocalStorage = function (name) {
+  const products = JSON.parse(localStorage.getItem(name));
+  return products;
+};
+
 export const formatPrice = function (price) {
   let newCurrancy = new Intl.NumberFormat('en-US', {
     style: 'currency',
