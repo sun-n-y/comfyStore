@@ -159,6 +159,7 @@ body {
     display: grid;
     place-content: center;
     visibility: hidden;
+    z-index: 2;
 }
 
 .sidebar-content {
