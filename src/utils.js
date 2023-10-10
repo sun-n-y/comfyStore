@@ -1,3 +1,5 @@
+import fetchProducts from './fetchProducts.js';
+
 export function getElement(selection) {
   const element = document.querySelector(selection);
   if (element) {
@@ -17,7 +19,7 @@ export const storeProductsLocalStorage = function (name, products) {
 };
 
 export const getProductsFromLocalStorage = function (name) {
-  const products = JSON.parse(localStorage.getItem(name));
+  let products = JSON.parse(localStorage.getItem(name));
   return products;
 };
 
