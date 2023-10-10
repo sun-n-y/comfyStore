@@ -40,6 +40,12 @@ body {
 
 }
 
+.error {
+    margin-bottom: 4rem;
+    color: #48515a;
+    letter-spacing: 1px;
+}
+
 /*
 =========================
  nav 
