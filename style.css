@@ -552,17 +552,18 @@ body {
 
 .products-container {
     display: grid;
-    gap: .7rem;
+    column-gap: 1rem;
+    row-gap: 2rem;
 }
 
 .products-container h4 {
-    font-size: .9rem;
+    font-size: .8rem;
     color: #617d98;
 }
 
 .products-container p {
-    font-size: .9rem;
-    margin-top: -.4rem;
+    font-size: .8rem;
+    margin-top: -.2rem;
     color: #102a42;
     font-weight: bold;
 }
