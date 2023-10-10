@@ -11,3 +11,15 @@ export const productsURL = 'https://course-api.com/javascript-store-products';
 
 export const singleProductURL =
   'https://course-api.com/javascript-store-single-product?id=';
+
+export const storeProductsLocalStorage = function (name, products) {
+  localStorage.setItem(name, JSON.stringify(products));
+};
+
+export const formatPrice = function (price) {
+  let newCurrancy = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format((price / 100).toFixed(2));
+  return newCurrancy;
+};
