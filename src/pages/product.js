@@ -27,6 +27,7 @@ const fetchSingleProduct = async () => {
             <p class="single-product-text">${product.description}</p>
             <button class="btn add-cart-btn">add to cart</button>
         </div>`;
+  addToCart();
 };
 
 fetchSingleProduct();

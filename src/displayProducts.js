@@ -14,7 +14,7 @@ const displayProducts = (products) => {
                     <a href="./product.html?id=${id}" class="search-btn">
                         <i class="fas fa-search"></i>
                     </a>
-                    <i class="fas fa-shopping-cart add-cart-btn"></i>
+                    <i class="fas fa-shopping-cart add-cart-btn" data-id="${id}"></i>
                 </div>
             </article>`;
     })
