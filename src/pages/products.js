@@ -6,10 +6,8 @@ import { getElement, getProductsFromLocalStorage } from '../utils.js';
 import addToCart from '../cart/addToCart.js';
 
 const productContainer = getElement('.products-container');
-const loading = getElement('.loading');
 
 window.addEventListener('DOMContentLoaded', async () => {
-  loading.textContent = 'loading...';
   let products = getProductsFromLocalStorage('store');
   if (!products) {
     products = await fetchProducts();
