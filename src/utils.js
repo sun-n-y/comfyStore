@@ -12,7 +12,7 @@ export function getElement(selection) {
 export const productsURL = 'https://course-api.com/javascript-store-products';
 
 export const singleProductURL =
-  'https://course-api.com/javascript-store-single-product?id=';
+  'https://course-api.com/javascript-store-single-product';
 
 export const storeProductsLocalStorage = function (name, products) {
   localStorage.setItem(name, JSON.stringify(products));
