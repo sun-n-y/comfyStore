@@ -1,8 +1,9 @@
 import './src/toggleSideBar.js';
 import './src/toggleCart.js';
+import { getElement } from './src/utils.js';
 import fetchProducts from './src/fetchProducts.js';
 import displayProducts from './src/displayProducts.js';
-import { getElement } from './src/utils.js';
+import cardBtns from './src/cardBtns.js';
 
 const featuredSection = getElement('.featured-section');
 const loading = getElement('.loading');
@@ -15,4 +16,6 @@ window.addEventListener('DOMContentLoaded', async () => {
   });
   featuredSection.innerHTML = displayProducts(featuredProducts);
   loading.textContent = '';
+
+  cardBtns();
 });
