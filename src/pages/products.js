@@ -42,9 +42,28 @@ searchForm.addEventListener('keyup', (e) => {
     }
   });
   if (filteredProducts.length < 1) {
-    productContainer.innerHTML = `<h2>Sorry, No matches found</h2>`;
+    productContainer.innerHTML = `<h3>Sorry, no matches found</h3>`;
   } else {
     productContainer.innerHTML = displayProducts(filteredProducts);
     addToCart();
   }
+});
+
+companiesContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('company-btn')) {
+    searchInput.value = '';
+    const value = e.target.textContent;
+    let products = getProductsFromLocalStorage('store');
+    if (value === 'all') {
+      productContainer.innerHTML = displayProducts(products);
+    } else {
+      const filteredProducts = products.filter((product) => {
+        if (product.fields.company === value) {
+          return product;
+        }
+      });
+      productContainer.innerHTML = displayProducts(filteredProducts);
+    }
+  }
+  addToCart();
 });
