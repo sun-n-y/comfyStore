@@ -2,13 +2,19 @@ import '../toggleSideBar.js';
 import '../toggleCart.js';
 import fetchProducts from '../fetchProducts.js';
 import displayProducts from '../displayProducts.js';
-import { getElement, getProductsFromLocalStorage } from '../utils.js';
+import {
+  formatPrice,
+  getElement,
+  getProductsFromLocalStorage,
+} from '../utils.js';
 import addToCart from '../cart/addToCart.js';
 
 const productContainer = getElement('.products-container');
 const searchForm = getElement('.input-form');
 const searchInput = getElement('.search-input');
 const companiesContainer = getElement('.companies');
+const rangeInput = getElement('.range-input');
+const rangeValue = getElement('.range-value');
 
 window.addEventListener('DOMContentLoaded', async () => {
   let products = getProductsFromLocalStorage('store');
@@ -64,6 +70,32 @@ companiesContainer.addEventListener('click', (e) => {
       });
       productContainer.innerHTML = displayProducts(filteredProducts);
     }
+  }
+  addToCart();
+});
+
+rangeInput.addEventListener('input', (e) => {
+  searchInput.value = '';
+  const rangeInputValue = parseInt(rangeInput.value);
+  let products = getProductsFromLocalStorage('store');
+  const prices = products.map((product) => {
+    return parseInt((product.fields.price + 1).toString().slice(0, 2));
+  });
+
+  rangeInput.max = Math.max(...prices);
+  rangeInput.min = 0;
+  rangeValue.textContent = `value : $${rangeInputValue}`;
+
+  const filteredProducts = products.filter((product) => {
+    return (
+      parseInt((product.fields.price + 1).toString().slice(0, 2)) <=
+      rangeInputValue
+    );
+  });
+  if (filteredProducts.length < 1) {
+    productContainer.innerHTML = `<h3>Sorry, no matches found</h3>`;
+  } else {
+    productContainer.innerHTML = displayProducts(filteredProducts);
   }
   addToCart();
 });

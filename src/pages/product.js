@@ -4,6 +4,7 @@ import addToCart from '../cart/addToCart.js';
 import { formatPrice, getElement, singleProductURL } from '../utils.js';
 
 const singleProduct = getElement('.single-product');
+const bannerContent = getElement('.banner-content');
 
 const fetchSingleProduct = async () => {
   const searchId = window.location.search;
@@ -11,6 +12,8 @@ const fetchSingleProduct = async () => {
   const data = await response.json();
   const { id, fields } = data;
   const product = { id, ...fields };
+
+  bannerContent.textContent = `home / ${product.name}`;
 
   singleProduct.innerHTML = `<img src="${
     product.image[0].thumbnails.large.url
