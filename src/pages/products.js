@@ -74,7 +74,7 @@ companiesContainer.addEventListener('click', (e) => {
   addToCart();
 });
 
-rangeInput.addEventListener('input', (e) => {
+rangeInput.addEventListener('input', () => {
   searchInput.value = '';
   const rangeInputValue = parseInt(rangeInput.value);
   let products = getProductsFromLocalStorage('store');
