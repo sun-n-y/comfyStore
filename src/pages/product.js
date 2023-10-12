@@ -25,7 +25,7 @@ const fetchSingleProduct = async () => {
               })
               .join('')}</div>
             <p class="single-product-text">${product.description}</p>
-            <button class="btn add-cart-btn">add to cart</button>
+            <button class="btn add-cart-btn" data-id="${id}">add to cart</button>
         </div>`;
   addToCart();
 };

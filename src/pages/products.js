@@ -6,6 +6,8 @@ import { getElement, getProductsFromLocalStorage } from '../utils.js';
 import addToCart from '../cart/addToCart.js';
 
 const productContainer = getElement('.products-container');
+const searchForm = getElement('.input-form');
+const searchInput = getElement('.search-input');
 
 window.addEventListener('DOMContentLoaded', async () => {
   let products = getProductsFromLocalStorage('store');
@@ -14,4 +16,21 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
   productContainer.innerHTML = displayProducts(products);
   addToCart();
+});
+
+searchForm.addEventListener('keyup', (e) => {
+  e.preventDefault();
+  const searchValue = searchInput.value;
+  let products = getProductsFromLocalStorage('store');
+  const filteredProducts = products.filter((product) => {
+    if (product.fields.name.includes(searchValue)) {
+      return product;
+    }
+  });
+  if (filteredProducts.length < 1) {
+    productContainer.innerHTML = `<h2>Sorry, No matches found</h2>`;
+  } else {
+    productContainer.innerHTML = displayProducts(filteredProducts);
+    addToCart();
+  }
 });
