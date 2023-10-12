@@ -8,6 +8,7 @@ import addToCart from '../cart/addToCart.js';
 const productContainer = getElement('.products-container');
 const searchForm = getElement('.input-form');
 const searchInput = getElement('.search-input');
+const companiesContainer = getElement('.companies');
 
 window.addEventListener('DOMContentLoaded', async () => {
   let products = getProductsFromLocalStorage('store');
@@ -16,6 +17,19 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
   productContainer.innerHTML = displayProducts(products);
   addToCart();
+  const companies = [
+    'all',
+    ...new Set(
+      products.map((product) => {
+        return product.fields.company;
+      })
+    ),
+  ];
+  companiesContainer.innerHTML = companies
+    .map((company) => {
+      return `<button class="company-btn">${company}</button>`;
+    })
+    .join('');
 });
 
 searchForm.addEventListener('keyup', (e) => {
