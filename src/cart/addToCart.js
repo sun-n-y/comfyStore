@@ -45,6 +45,7 @@ const addToCart = function () {
       console.log(currCart);
     });
   });
+  //display cart items from locale storage
 };
 
 export default addToCart;
