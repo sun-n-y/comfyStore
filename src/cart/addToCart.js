@@ -1,12 +1,28 @@
-import { getElement } from '../utils.js';
+import {
+  getElement,
+  getProductsFromLocalStorage,
+  storeProductsLocalStorage,
+} from '../utils.js';
+
+let cartItems = [];
+const products = getProductsFromLocalStorage('store');
 
 const addToCart = function () {
-  const addCartBtn = getElement('.add-cart-btn');
+  const addCartBtns = document.querySelectorAll('.add-cart-btn');
   const cart = getElement('.cart-overlay');
 
-  addCartBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    cart.classList.add('show-cart');
+  addCartBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = e.target.dataset.id;
+      cartItems.push(
+        products.filter((product) => {
+          return product.id === id;
+        })
+      );
+      storeProductsLocalStorage('cart', cartItems);
+      cart.classList.add('show-cart');
+    });
   });
 };
 
