@@ -2,11 +2,7 @@ import '../toggleSideBar.js';
 import '../toggleCart.js';
 import fetchProducts from '../fetchProducts.js';
 import displayProducts from '../displayProducts.js';
-import {
-  formatPrice,
-  getElement,
-  getProductsFromLocalStorage,
-} from '../utils.js';
+import { getElement, getProductsFromLocalStorage } from '../utils.js';
 import addToCart from '../cart/addToCart.js';
 
 const productContainer = getElement('.products-container');
@@ -83,7 +79,7 @@ rangeInput.addEventListener('input', () => {
   });
 
   rangeInput.max = Math.max(...prices);
-  rangeInput.min = 0;
+  rangeInput.min = Math.min(...prices);
   rangeValue.textContent = `value : $${rangeInputValue}`;
 
   const filteredProducts = products.filter((product) => {
