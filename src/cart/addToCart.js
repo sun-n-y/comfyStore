@@ -26,11 +26,23 @@ const addToCart = function () {
 
       selectedItem = { amount: 1, ...selectedItem[0] };
 
-      const currCart = getProductsFromLocalStorage('cart');
+      let currCart = getProductsFromLocalStorage('cart');
 
-      currCart.push(selectedItem);
+      if (
+        currCart.find((product) => {
+          return product.id === selectedItem.id;
+        })
+      ) {
+        const index = currCart.findIndex((product) => {
+          return product.id === selectedItem.id;
+        });
+        currCart[index].amount++;
+      } else {
+        currCart.push(selectedItem);
+      }
 
       storeProductsLocalStorage('cart', currCart);
+      console.log(currCart);
     });
   });
 };
