@@ -3,7 +3,7 @@ import '../toggleCart.js';
 import fetchProducts from '../fetchProducts.js';
 import displayProducts from '../displayProducts.js';
 import { getElement, getProductsFromLocalStorage } from '../utils.js';
-import openCart from '../cart/openCart.js';
+import addToCart from '../cart/addToCart.js';
 
 const productContainer = getElement('.products-container');
 const searchForm = getElement('.input-form');
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     products = await fetchProducts();
   }
   productContainer.innerHTML = displayProducts(products);
-  openCart();
+  addToCart();
   const companies = [
     'all',
     ...new Set(
@@ -47,7 +47,7 @@ searchForm.addEventListener('keyup', (e) => {
     productContainer.innerHTML = `<h3>Sorry, no matches found</h3>`;
   } else {
     productContainer.innerHTML = displayProducts(filteredProducts);
-    openCart();
+    addToCart();
   }
 });
 
@@ -67,7 +67,7 @@ companiesContainer.addEventListener('click', (e) => {
       productContainer.innerHTML = displayProducts(filteredProducts);
     }
   }
-  openCart();
+  addToCart();
 });
 
 rangeInput.addEventListener('input', () => {
@@ -93,5 +93,5 @@ rangeInput.addEventListener('input', () => {
   } else {
     productContainer.innerHTML = displayProducts(filteredProducts);
   }
-  openCart();
+  addToCart();
 });
