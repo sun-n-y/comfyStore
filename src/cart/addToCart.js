@@ -23,11 +23,14 @@ const addToCart = function () {
       let selectedItem = products.filter((product) => {
         return product.id === id;
       });
+
       selectedItem = { amount: 1, ...selectedItem[0] };
 
-      cartItems.push(selectedItem);
+      const currCart = getProductsFromLocalStorage('cart');
 
-      console.log(cartItems);
+      currCart.push(selectedItem);
+
+      storeProductsLocalStorage('cart', currCart);
     });
   });
 };
