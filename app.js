@@ -3,7 +3,7 @@ import './src/toggleCart.js';
 import { getElement } from './src/utils.js';
 import fetchProducts from './src/fetchProducts.js';
 import displayProducts from './src/displayProducts.js';
-import addToCart from './src/cart/addToCart.js';
+import openCart from './src/cart/openCart.js';
 
 const featured = getElement('.featured');
 
@@ -17,5 +17,5 @@ window.addEventListener('DOMContentLoaded', async () => {
   ${displayProducts(featuredProducts)}
    </section><a href="./products.html" class="featured-btn">all products</a>
  `;
-  addToCart();
+  openCart();
 });

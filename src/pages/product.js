@@ -1,7 +1,7 @@
 import '../toggleSideBar.js';
 import '../toggleCart.js';
-import addToCart from '../cart/addToCart.js';
 import { formatPrice, getElement, singleProductURL } from '../utils.js';
+import openCart from '../cart/openCart.js';
 
 const singleProduct = getElement('.single-product');
 const bannerContent = getElement('.banner-content');
@@ -30,7 +30,7 @@ const fetchSingleProduct = async () => {
             <p class="single-product-text">${product.description}</p>
             <button class="btn add-cart-btn" data-id="${id}">add to cart</button>
         </div>`;
-  addToCart();
+  openCart();
 };
 
 fetchSingleProduct();
