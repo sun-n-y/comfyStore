@@ -1,10 +1,5 @@
-import {
-  getElement,
-  getProductsFromLocalStorage,
-  storeProductsLocalStorage,
-} from '../utils.js';
+import { getElement, getProductsFromLocalStorage } from '../utils.js';
 
-let cartItems = [];
 const products = getProductsFromLocalStorage('store');
 
 const addToCart = function () {
@@ -15,12 +10,13 @@ const addToCart = function () {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const id = e.target.dataset.id;
-      cartItems.push(
-        products.filter((product) => {
+      const selectedItem = {
+        amount: 1,
+        ...products.filter((product) => {
           return product.id === id;
-        })
-      );
-      storeProductsLocalStorage('cart', cartItems);
+        }),
+      };
+      console.log(selectedItem);
       cart.classList.add('show-cart');
     });
   });
