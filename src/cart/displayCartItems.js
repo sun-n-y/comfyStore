@@ -1,6 +1,7 @@
 import { formatPrice, getElement } from '../utils.js';
 
 const cartItemsContainer = getElement('.cart-items');
+const cartTotal = getElement('.cart-total');
 
 const displayCartItems = (cartItems) => {
   cartItemsContainer.innerHTML = cartItems
@@ -26,6 +27,14 @@ const displayCartItems = (cartItems) => {
                 </div>`;
     })
     .join('');
+  calculatePrice(cartItems);
+};
+
+const calculatePrice = function (cartItems) {
+  const totalPrice = cartItems.reduce((total, curr) => {
+    return total + curr.amount * curr.fields.price;
+  }, 0);
+  cartTotal.textContent = `total : ${formatPrice(totalPrice)}`;
 };
 
 export default displayCartItems;
