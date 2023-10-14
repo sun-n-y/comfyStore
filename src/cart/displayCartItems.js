@@ -2,8 +2,12 @@ import { formatPrice, getElement } from '../utils.js';
 
 const cartItemsContainer = getElement('.cart-items');
 const cartTotal = getElement('.cart-total');
+const cartCount = getElement('.cart-count');
 
 const displayCartItems = (cartItems) => {
+  cartCount.textContent = cartItems.reduce((total, curr) => {
+    return total + curr.amount;
+  }, 0);
   cartItemsContainer.innerHTML = cartItems
     .map((item) => {
       const { id, amount, fields } = item;
