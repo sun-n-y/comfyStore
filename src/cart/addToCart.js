@@ -50,15 +50,36 @@ const addToCart = function () {
 };
 
 cartItemsContainer.addEventListener('click', (e) => {
+  let cartItems = getProductsFromLocalStorage('cart');
   if (e.target.classList.contains('remove-cart-item-btn')) {
-    console.log('remove item');
+    const id = e.target.dataset.id;
+    const updateCart = cartItems.filter((item) => {
+      return item.id != id;
+    });
+    storeProductsLocalStorage('cart', updateCart);
+    displayCartItems(updateCart);
   }
   if (e.target.parentElement.classList.contains('cart-increase-btn')) {
-    console.log('increase item');
+    const id = e.target.parentElement.parentElement.dataset.id;
+    cartItems.find((item) => {
+      if (item.id === id) {
+        item.amount++;
+        return item;
+      }
+    });
+    storeProductsLocalStorage('cart', cartItems);
+    displayCartItems(cartItems);
   }
   if (e.target.parentElement.classList.contains('cart-decrease-btn')) {
-    console.log('decrease item');
+    const id = e.target.parentElement.parentElement.dataset.id;
+    cartItems.find((item) => {
+      if (item.id === id) {
+        item.amount--;
+        return item;
+      }
+    });
+    storeProductsLocalStorage('cart', cartItems);
+    displayCartItems(cartItems);
   }
 });
-
 export default addToCart;
