@@ -1,7 +1,15 @@
 import '../toggleSideBar.js';
 import '../toggleCart.js';
 import addToCart from '../cart/addToCart.js';
-import { formatPrice, getElement, singleProductURL } from '../utils.js';
+import {
+  formatPrice,
+  getElement,
+  getProductsFromLocalStorage,
+  singleProductURL,
+} from '../utils.js';
+import displayCartItems from '../cart/displayCartItems.js';
+
+let cartItems = getProductsFromLocalStorage('cart');
 
 const singleProduct = getElement('.single-product');
 const bannerContent = getElement('.banner-content');
@@ -34,3 +42,4 @@ const fetchSingleProduct = async () => {
 };
 
 fetchSingleProduct();
+displayCartItems(cartItems);

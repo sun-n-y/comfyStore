@@ -4,6 +4,9 @@ import fetchProducts from '../fetchProducts.js';
 import displayProducts from '../displayProducts.js';
 import { getElement, getProductsFromLocalStorage } from '../utils.js';
 import addToCart from '../cart/addToCart.js';
+import displayCartItems from '../cart/displayCartItems.js';
+
+let cartItems = getProductsFromLocalStorage('cart');
 
 const productContainer = getElement('.products-container');
 const searchForm = getElement('.input-form');
@@ -32,6 +35,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       return `<button class="company-btn">${company}</button>`;
     })
     .join('');
+  displayCartItems(cartItems);
 });
 
 searchForm.addEventListener('keyup', (e) => {
