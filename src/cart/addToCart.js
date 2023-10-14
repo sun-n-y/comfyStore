@@ -10,6 +10,7 @@ if (cartItems === null) {
   storeProductsLocalStorage('cart', []);
   cartItems = [];
 }
+const cartItemsContainer = getElement('.cart-items');
 
 const addToCart = function () {
   const products = getProductsFromLocalStorage('store');
@@ -47,5 +48,17 @@ const addToCart = function () {
     });
   });
 };
+
+cartItemsContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-cart-item-btn')) {
+    console.log('remove item');
+  }
+  if (e.target.parentElement.classList.contains('cart-increase-btn')) {
+    console.log('increase item');
+  }
+  if (e.target.parentElement.classList.contains('cart-decrease-btn')) {
+    console.log('decrease item');
+  }
+});
 
 export default addToCart;
