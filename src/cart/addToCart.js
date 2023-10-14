@@ -3,6 +3,7 @@ import {
   getProductsFromLocalStorage,
   storeProductsLocalStorage,
 } from '../utils.js';
+import displayCartItems from './displayCartItems.js';
 
 let cartItems = getProductsFromLocalStorage('cart');
 if (cartItems === null) {
@@ -42,10 +43,9 @@ const addToCart = function () {
       }
 
       storeProductsLocalStorage('cart', currCart);
-      console.log(currCart);
+      displayCartItems(currCart);
     });
   });
-  //display cart items from locale storage
 };
 
 export default addToCart;
