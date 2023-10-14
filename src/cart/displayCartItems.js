@@ -10,6 +10,8 @@ const displayCartItems = (cartItems) => {
       const { name, price, image } = fields;
       const imageURL = image[0].thumbnails.large.url;
 
+      if (amount === 0) return;
+
       return `<div class="cart-card">
                     <img src="${imageURL}" class="cart-item-img" alt="${name}">
                     <div class="cart-item-info">
