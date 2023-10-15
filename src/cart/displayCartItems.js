@@ -3,8 +3,15 @@ import { formatPrice, getElement } from '../utils.js';
 const cartItemsContainer = getElement('.cart-items');
 const cartTotal = getElement('.cart-total');
 const cartCount = getElement('.cart-count');
+const cartFooter = getElement('.cart-footer');
 
 const displayCartItems = (cartItems) => {
+  if (cartItems.length === 0) {
+    cartItemsContainer.innerHTML = `<h4 class="empty-cart">is empty</h4>`;
+    cartCount.textContent = 0;
+    cartTotal.textContent = '';
+    return;
+  }
   cartCount.textContent = cartItems.reduce((total, curr) => {
     return total + curr.amount;
   }, 0);

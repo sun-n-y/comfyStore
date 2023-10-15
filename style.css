@@ -359,6 +359,12 @@ body {
     transform: translateX(0);
 }
 
+.empty-cart {
+    text-align: center;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
 /*
 =========================
  hero
@@ -412,6 +418,20 @@ body {
     color: #ba5d2c;
 }
 
+@media screen and (min-width:992px) {
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    .hero-content a {
+        font-size: 1rem;
+    }
+}
+
 /*
 =========================
  feature
@@ -446,7 +466,6 @@ body {
     flex-direction: column;
     row-gap: .5rem;
     position: relative;
-    transition: all 1s ease;
 }
 
 .featured-card-btns {
@@ -459,10 +478,13 @@ body {
     font-size: 1rem;
     color: white;
     visibility: hidden;
+    transition: all .5s ease;
+    opacity: 0;
 }
 
 .featured-card:hover .featured-card-btns {
     visibility: visible;
+    opacity: 1;
 }
 
 .search-btn {
