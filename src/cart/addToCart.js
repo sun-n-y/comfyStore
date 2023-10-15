@@ -78,8 +78,11 @@ cartItemsContainer.addEventListener('click', (e) => {
         return item;
       }
     });
-    storeProductsLocalStorage('cart', cartItems);
-    displayCartItems(cartItems);
+    const updateCart = cartItems.filter((item) => {
+      return item.amount != 0;
+    });
+    storeProductsLocalStorage('cart', updateCart);
+    displayCartItems(updateCart);
   }
 });
 export default addToCart;
